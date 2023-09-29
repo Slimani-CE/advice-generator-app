@@ -1,0 +1,140 @@
+:root {
+    --dark-blue: #202733;
+    --dark-grayish-blue: #313A48;
+    --grayish-blue: #4F5D74;
+    --light-cyan: #CEE3E9;
+    --neon-green: #53FFAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 540px;
+    height: 364px;
+    border-radius: 15px;
+    background-color: var(--dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px;
+    position: relative;
+}
+
+.container .advice-id {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4.09px;
+    color: var(--neon-green);
+    text-transform: uppercase;
+}
+
+.container .advice {
+    height: 114px;
+    font-size: 28px;
+    letter-spacing: -0.3px;
+    font-weight: 800;
+    color: var(--light-cyan);
+    text-align: center;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .pattern {
+    margin-top: 40px;
+}
+
+.container .footer {
+    position: absolute;
+    bottom: -32px;
+}
+
+.container .footer .btn,
+.container .footer .loading {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--neon-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .btn svg path{
+    fill: var(--dark-grayish-blue);
+}
+
+.container .btn:hover {
+    box-shadow: 0 0 40px 0 var(--neon-green);
+}
+
+.container .btn:hover svg path {
+    fill: var(--dark-blue);
+}
+
+.container .footer .loading {
+    column-gap: 5px;
+}
+
+.container .footer .loading > div {
+    width: 15px;
+    height: 15px;
+    background-color: var(--dark-blue);
+    border-radius: 50%;
+    animation: loading 1s ease-in-out infinite alternate;
+}
+
+.container .footer .loading > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.container .footer .loading > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* ANIMATIONS */
+@keyframes loading {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+/* MOBILE CSS */
+@media screen and (max-width: 550px) {
+    .container {
+        width: 400px;
+    }
+
+    .container .advice-id {
+        font-size: 11px;
+        letter-spacing: 3.46px;
+    }
+
+    .container .advice {
+        font-size: 24px;
+        letter-spacing: -0.26px;
+    }
+}
